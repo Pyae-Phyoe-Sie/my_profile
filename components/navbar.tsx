@@ -28,7 +28,7 @@ export default function Navbar() {
           </button>
         </div>
         <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-          <div className="hidden sm:ml-6 sm:block">
+          <div className="hidden sm:block">
             <div className="flex space-x-4">
               <Link href="/" className={pathname === '/' ? 'bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium' : 'text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium'}>Introduction</Link>
               <Link href="/resume" className={pathname === '/resume' ? 'bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium' : 'text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium'}>

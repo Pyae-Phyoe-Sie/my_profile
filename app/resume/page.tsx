@@ -6,10 +6,10 @@ export default function PERSONAL_INFORMATION() {
     const [data] = useState<MYDATA>(DataService.getMyData())
     const [year] = useState<string>(DataService.getExpYear())
 
-    return <main className="flex flex-col items-center justify-between p-10">
-        <div className="grid grid-cols-4 sm:grid-cols-12 gap-6 px-4">
-            <div className="col-span-4 sm:col-span-3">
-                <div className="bg-gray-700 shadow rounded-lg p-6">
+    return <main className="flex flex-col items-center justify-between xl:p-10">
+        <div className="grid grid-cols-4 md:grid-cols-12 xl:gap-6">
+            <div className="col-span-4 md:col-span-3">
+                <div className="bg-gray-700 shadow xl:rounded-lg p-6">
                     <div className="flex flex-col items-center">
                         <img src="/profile.jpg" className="w-32 h-32 bg-white rounded-full mb-4 shrink-0" />
                         <h1 className="text-white text-xl font-bold">{ data.personal_information.name } ({ data.personal_information.nickname })</h1>
@@ -50,8 +50,8 @@ export default function PERSONAL_INFORMATION() {
                     </div>
                 </div>
             </div>
-            <div className="col-span-4 sm:col-span-9">
-                <div className="bg-white shadow rounded-lg p-6">
+            <div className="col-span-4 md:col-span-9">
+                <div className="bg-white shadow xl:rounded-lg p-6">
                     <h2 className="text-xl font-bold mb-4">About Me</h2>
                     <p className="text-gray-700">{ (data.personal_information.profile).replace("{YEAR}", `${year}`) }</p>
 
