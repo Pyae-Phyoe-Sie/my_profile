@@ -8,7 +8,10 @@ export const personalData = {
             experience in web application development. Over 2 years’ experience in Singapore web 
             projects and SharePoint list projects. Critical thinking and data structuring is stronger. 
             Currently, working as a Senior Full Stack Web Developer.`,
-        start_year: 2017
+        start_year: 2017,
+        linkedIn: "https://www.linkedin.com/in/pyae-phyoe-sie-302342197/",
+        github: "https://github.com/Pyae-Phyoe-Sie",
+        location: "https://maps.app.goo.gl/9VycHeSuZ4KQN8EB7"
     },
     education_background: [
         {
@@ -214,7 +217,7 @@ export const personalData = {
     cover: [
         `Dear Sir / Madam,<br/><br/>
         My full name is Pyae Phyoe Sie. I graduated from Yangon East University. My degree is BA English. I attended software engineer class in 2016. At 2017 January my IT life was started.<br/><br/> 
-        I have over 7 years’ experience in the web application developing field. My current position is Senior Full Stack Developer. I have a strong thinking of code flow. And every time I am happy to learn new technologies.<br/><br/>
+        I have over {YEAR} years’ experience in the web application developing field. My current position is Senior Full Stack Developer. I have a strong thinking of code flow. And every time I am happy to learn new technologies.<br/><br/>
         Here are my current job descriptions.<br/>
             ▪ Lead the project structure<br/>
             ▪ Test and share new technologies<br/>
@@ -226,6 +229,7 @@ export const personalData = {
         Best Regards,<br/>
         Pyae Phyoe Sie<br/>
         +959777538828 (WhatsApp)<br/>
+        pyaephyoesie23 (Line ID)<br/>
         kimshinpyae@gmail.com`
     ]
 }

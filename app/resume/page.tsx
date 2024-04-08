@@ -4,16 +4,14 @@ import { useState } from "react";
 
 export default function PERSONAL_INFORMATION() {
     const [data] = useState<MYDATA>(DataService.getMyData())
-    const [year] = useState<number>(DataService.getTotalExpYear(data.personal_information.start_year))
+    const [year] = useState<string>(DataService.getExpYear())
 
     return <main className="flex flex-col items-center justify-between p-10">
         <div className="grid grid-cols-4 sm:grid-cols-12 gap-6 px-4">
             <div className="col-span-4 sm:col-span-3">
                 <div className="bg-gray-700 shadow rounded-lg p-6">
                     <div className="flex flex-col items-center">
-                        <img src="/profile.jpg" className="w-32 h-32 bg-white rounded-full mb-4 shrink-0">
-
-                        </img>
+                        <img src="/profile.jpg" className="w-32 h-32 bg-white rounded-full mb-4 shrink-0" />
                         <h1 className="text-white text-xl font-bold">{ data.personal_information.name } ({ data.personal_information.nickname })</h1>
                         <p className="text-white">{ data.personal_information.title }</p>
                     </div>
@@ -61,7 +59,8 @@ export default function PERSONAL_INFORMATION() {
                         Find me on
                     </h3>
                     <div className="flex justify-center items-center gap-6 my-6">
-                        <a href="https://mm.linkedin.com/in/pyaephyoe-sie-302342197" className="text-gray-700 hover:text-orange-600" aria-label="Visit TrendyMinds LinkedIn"
+                        <a className="text-gray-700 hover:text-orange-600" aria-label="Visit TrendyMinds LinkedIn"
+                            href={data.personal_information.linkedIn}
                             target="_blank">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" className="h-6">
                                 <path fill="currentColor"
@@ -69,19 +68,27 @@ export default function PERSONAL_INFORMATION() {
                                 </path>
                             </svg>
                         </a>
-                        <a className="text-gray-700 hover:text-orange-600" aria-label="Visit TrendyMinds YouTube" href=""
+                        <a className="text-gray-700 hover:text-orange-600" aria-label="Visit TrendyMinds Github"
+                            href={data.personal_information.github}
                             target="_blank">
                             <svg width="20" height="20" aria-hidden="true" viewBox="0 0 16 16" version="1.1" data-view-component="true" className="octicon octicon-mark-github v-align-middle color-fg-default">
                                 <path fill="currentColor"
                                     d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path>
                             </svg>
                         </a>
+                        <a className="text-gray-700 hover:text-orange-600" aria-label="Visit TrendyMinds Map"
+                            href={data.personal_information.location}
+                            target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
+                                <path fillRule="evenodd" d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" clipRule="evenodd" />
+                            </svg>
+                        </a>
                     </div>
-
+                    <hr className="my-6 border-t border-gray-300" />
 
                     <h2 className="text-xl font-bold mt-6 mb-4">Experience</h2>
                     {data.experience.map((experience, index) => (
-                        <div key={index} className="mb-6 border-b pb-2">
+                        <div key={index} className={`${(index + 1 != data.experience.length) ? "border-b mb-6 pb-2" : "mb-6 pb-2"}`}>
                             <div className="flex justify-between flex-wrap gap-2 w-full">
                                 <span className="text-gray-700 font-bold">{ experience.title }</span>
                                 <p className="text-right w-full">

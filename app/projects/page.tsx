@@ -11,7 +11,7 @@ export default function PROJECTS() {
                 <div className="bg-white shadow rounded-lg p-6">
                     <h2 className="text-xl font-bold mt-6 mb-4">Projects</h2>
                     {data.map((project, index) => (
-                        <div key={index} className="mb-2 border-b">
+                        <div key={index} className={`${(index + 1 != data.length) ? "border-b py-5" : "py-5"}`}>
                             <div className="flex justify-between flex-wrap w-full">
                                 <span className="text-gray-700 font-bold">{ project.title }</span>
                             </div>

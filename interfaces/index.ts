@@ -12,7 +12,10 @@ interface PERSONAL {
     nickname: string,
     title: string,
     profile: string,
-    start_year: number
+    start_year: number,
+    linkedIn: string,
+    github: string,
+    location: string,
 }
 
 interface SKILL {
