@@ -1,7 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-    fs: false,
-    path: false
-};
+const nextConfig = {};
 
 export default nextConfig;

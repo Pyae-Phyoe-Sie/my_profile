@@ -1,12 +1,32 @@
 "use client"
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { downloadCount } from '@/services/CountService'
+import useSWR from 'swr'
+
+const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
 export default function Navbar() {
 
     const [mobileMenu, setMobileMenu] = useState<boolean>(false)
     const pathname = usePathname()
+    const [downloadCounts, setDownloadCounts] = useState<number>(0)
+
+    const { data } = useSWR<{count: number}>("/api", fetcher);
+
+    useEffect(() => {
+      setDownloadCounts(data?.count!)
+    }, [data])
+
+    const count = () => {
+      fetch("/api", {
+        method: "POST"
+      })
+      .then((res) => {
+        setDownloadCounts(downloadCounts+1)
+      })
+    }
     
     return <nav className="bg-gray-800">
     <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -41,7 +61,14 @@ export default function Navbar() {
           </div>
         </div>
         <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-        <label className='text-white'>Pyae Phyoe Sie</label>
+          <a className='text-white bg-green-600 rounded p-2 flex' href='/PyaePhyoeSie.zip' onClick={count}>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
+              <path fillRule="evenodd" d="M19.5 21a3 3 0 0 0 3-3V9a3 3 0 0 0-3-3h-5.379a.75.75 0 0 1-.53-.22L11.47 3.66A2.25 2.25 0 0 0 9.879 3H4.5a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h15Zm-6.75-10.5a.75.75 0 0 0-1.5 0v4.19l-1.72-1.72a.75.75 0 0 0-1.06 1.06l3 3a.75.75 0 0 0 1.06 0l3-3a.75.75 0 1 0-1.06-1.06l-1.72 1.72V10.5Z" clipRule="evenodd" />
+            </svg>
+            <label className='ml-1 cursor-pointer'>Download Resume</label>
+            <div className='ml-1'>{downloadCounts}</div>
+          </a>
+        {/* <label className='text-white'>Pyae Phyoe Sie</label> */}
 
         {/* <!-- Profile dropdown --> */}
         <div className="relative ml-3">
