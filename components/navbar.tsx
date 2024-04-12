@@ -2,30 +2,25 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
-import { downloadCount } from '@/services/CountService'
 import useSWR from 'swr'
+import { getCount, updateCount } from '@/services/CountService'
 
-const fetcher = (url: string) => fetch(url).then((res) => res.json())
+const fetcher = (url: string) => getCount().then((res) => res)
 
 export default function Navbar() {
-
     const [mobileMenu, setMobileMenu] = useState<boolean>(false)
     const pathname = usePathname()
     const [downloadCounts, setDownloadCounts] = useState<number>(0)
 
-    const { data } = useSWR<{count: number}>("/api", fetcher);
+    const { data } = useSWR<number>("/", fetcher);
 
     useEffect(() => {
-      setDownloadCounts(data?.count!)
+      setDownloadCounts(data!)
     }, [data])
 
-    const count = () => {
-      fetch("/api", {
-        method: "POST"
-      })
-      .then((res) => {
-        setDownloadCounts(downloadCounts+1)
-      })
+    const count = async () => {
+      await updateCount(downloadCounts + 1)
+      setDownloadCounts(downloadCounts + 1)
     }
     
     return <nav className="bg-gray-800">
