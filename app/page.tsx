@@ -7,6 +7,7 @@ export default function HOME() {
     const [cover, setCover] = useState<string>()
     useEffect(() => {
         getMyCover().then((res) => setCover(res))
+        console.log(cover)
     }, [cover])
 
     return (!cover) ?

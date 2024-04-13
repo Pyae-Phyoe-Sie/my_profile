@@ -41,6 +41,7 @@ const dbRef = ref(getDatabase())
      */
     export async function getMyCover() {
         const cover = await get(child(dbRef, `/cover`))
+        console.log(cover)
         const personal = (await get(child(dbRef, `/personal`))).val() as PERSONAL
         return (cover.val()).replace("{YEAR}", getTotalExpYear(personal.start_year)) as string
     }

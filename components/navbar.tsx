@@ -75,9 +75,6 @@ export default function Navbar() {
                   <Link href="/resume" className={pathname === '/resume' ? 'bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium' : 'text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium'}>
                     Resume
                   </Link>
-                  <Link href="/projects" className={pathname === '/projects' ? 'bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium' : 'text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium'}>
-                    Projects
-                  </Link>
                 </div>
               </div>
             </div>
@@ -107,9 +104,6 @@ export default function Navbar() {
             <Link href="/" className={pathname === '/' ? 'bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium' : 'text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium'}>Introduction</Link>
             <Link href="/resume" className={pathname === '/resume' ? 'bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium' : 'text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium'}>
               Resume
-            </Link>
-            <Link href="/projects" className={pathname === '/projects' ? 'bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium' : 'text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium'}>
-              Projects
             </Link>
           </div>
         </div>}
