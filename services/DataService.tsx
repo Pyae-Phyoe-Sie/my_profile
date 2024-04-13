@@ -51,12 +51,12 @@ const dbRef = ref(getDatabase())
         return currentYear - year
     }
 
-    // // public static async getExpYear() {
-    // export async function getExpYear() {
-    //     const personal = await get(child(dbRef, `/personal`))
-
-    //     const d = new Date();
-    //     let currentYear = d.getFullYear();
-    //     return `${currentYear - parseInt(personal.val().start_year)}`
-    // }
+    /**
+     * get cover data
+     * @returns string
+     */
+    export async function getZipFileLink() {
+        const zipLink = await get(child(dbRef, `/zip`))
+        return zipLink.val() as string
+    }
 // }

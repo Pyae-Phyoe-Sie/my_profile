@@ -5,6 +5,7 @@ import { FC, useEffect, useState } from 'react'
 import useSWR from 'swr'
 import { getCount, updateCount, saveEmail } from '@/services/CountService'
 import Popup from './popup'
+import { getZipFileLink } from '@/services/DataService'
 
 const fetcher = (url: string) => getCount().then((res) => res)
 
@@ -13,6 +14,11 @@ export default function Navbar() {
     const pathname = usePathname()
     const [downloadCounts, setDownloadCounts] = useState<number>(0)
     const [showPopup, setShowPopup] = useState<boolean>(false)
+
+    const [zipLink, setZipLink] = useState<string>()
+    useEffect(() => {
+      getZipFileLink().then((res) => setZipLink(res))
+    }, [])
 
     const { data } = useSWR<number>("/", fetcher);
 
@@ -36,7 +42,7 @@ export default function Navbar() {
 
     const download = () => {
       var link = document.createElement('a')
-      link.href = "/PyaePhyoeSie.zip";
+      link.href = zipLink!;
       link.click()
       link.remove();
     }
