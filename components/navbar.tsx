@@ -5,7 +5,7 @@ import { FC, useEffect, useState } from 'react'
 import useSWR from 'swr'
 import { getCount, updateCount, saveEmail } from '@/services/CountService'
 import Popup from './popup'
-import { getZipFileLink } from '@/services/DataService'
+import { getZipFileLink, getProfileLink } from '@/services/DataService'
 
 const fetcher = (url: string) => getCount().then((res) => res)
 
@@ -15,9 +15,11 @@ export default function Navbar() {
     const [downloadCounts, setDownloadCounts] = useState<number>(0)
     const [showPopup, setShowPopup] = useState<boolean>(false)
 
+    const [profileLink, setProfileLink] = useState<string>()
     const [zipLink, setZipLink] = useState<string>()
     useEffect(() => {
       getZipFileLink().then((res) => setZipLink(res))
+      getProfileLink().then((res) => setProfileLink(res))
     }, [])
 
     const { data } = useSWR<number>("/", fetcher);
@@ -92,7 +94,7 @@ export default function Navbar() {
               </button>
               <div className="relative ml-3">
                 <div>
-                  <img className="h-8 w-8 rounded-full" src="/profile.jpg" alt="" />
+                  <img className="h-8 w-8 rounded-full" src={profileLink} alt="" />
                 </div>
               </div>
             </div>

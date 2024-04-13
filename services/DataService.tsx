@@ -59,4 +59,13 @@ const dbRef = ref(getDatabase())
         const zipLink = await get(child(dbRef, `/zip`))
         return zipLink.val() as string
     }
+
+    /**
+     * get cover data
+     * @returns string
+     */
+    export async function getProfileLink() {
+        const profileLink = await get(child(dbRef, `/profile`))
+        return profileLink.val() as string
+    }
 // }

@@ -1,5 +1,5 @@
 "use client"
-import { getMyData, getTotalExpYear } from "@/services/DataService";
+import { getMyData, getProfileLink, getTotalExpYear } from "@/services/DataService";
 import { useEffect, useState } from "react"
 import Processing from "@/components/processing"
 
@@ -7,6 +7,11 @@ export default function PERSONAL_INFORMATION() {
     const [myData, setMyData] = useState<MYDATA>()
     useEffect(() => {
         getMyData().then((res) => setMyData(res))
+    }, [])
+
+    const [profileLink, setProfileLink] = useState<string>()
+    useEffect(() => {
+      getProfileLink().then((res) => setProfileLink(res))
     }, [])
 
     return (!myData?.personal_information) ?
@@ -17,7 +22,7 @@ export default function PERSONAL_INFORMATION() {
             <div className="col-span-4 md:col-span-3">
                 <div className="bg-gray-700 shadow xl:rounded-lg p-6">
                     <div className="flex flex-col items-center">
-                        <img src="/profile.jpg" className="w-32 h-32 bg-white rounded-full mb-4 shrink-0" />
+                        <img src={profileLink} className="w-32 h-32 bg-white rounded-full mb-4 shrink-0" />
                         <h1 className="text-white text-xl font-bold">{ myData?.personal_information.name } ({ myData?.personal_information.nickname })</h1>
                         <p className="text-white">{ myData?.personal_information.title }</p>
                     </div>
