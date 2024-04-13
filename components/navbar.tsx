@@ -17,7 +17,7 @@ export default function Navbar() {
     const { data } = useSWR<number>("/", fetcher);
 
     useEffect(() => {
-      setDownloadCounts(data!)
+      if (data) setDownloadCounts(data)
     }, [data])
 
     const count = () => {

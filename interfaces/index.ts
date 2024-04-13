@@ -51,9 +51,7 @@ interface MYDATA {
     education_background: EDUCATION[],
     skills: SKILL[],
     experience: EXPERIENCE[],
-    projects: PROJECT[],
     reference: REFERENCE[],
-    cover: string[]
 }
 
 interface PopupProps {

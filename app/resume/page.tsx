@@ -1,25 +1,31 @@
 "use client"
-import DataService from "@/services/DataService";
-import { useState } from "react";
+import { getMyData, getTotalExpYear } from "@/services/DataService";
+import { useEffect, useState } from "react"
+import Processing from "@/components/processing"
 
 export default function PERSONAL_INFORMATION() {
-    const [data] = useState<MYDATA>(DataService.getMyData())
-    const [year] = useState<string>(DataService.getExpYear())
+    const [myData, setMyData] = useState<MYDATA>()
+    useEffect(() => {
+        getMyData().then((res) => setMyData(res))
+    }, [])
 
-    return <main className="flex flex-col items-center justify-between xl:p-10">
+    return (!myData?.personal_information) ?
+    <Processing />
+    :
+    <main className="flex flex-col items-center justify-between xl:p-10">
         <div className="grid grid-cols-4 md:grid-cols-12 xl:gap-6">
             <div className="col-span-4 md:col-span-3">
                 <div className="bg-gray-700 shadow xl:rounded-lg p-6">
                     <div className="flex flex-col items-center">
                         <img src="/profile.jpg" className="w-32 h-32 bg-white rounded-full mb-4 shrink-0" />
-                        <h1 className="text-white text-xl font-bold">{ data.personal_information.name } ({ data.personal_information.nickname })</h1>
-                        <p className="text-white">{ data.personal_information.title }</p>
+                        <h1 className="text-white text-xl font-bold">{ myData?.personal_information.name } ({ myData?.personal_information.nickname })</h1>
+                        <p className="text-white">{ myData?.personal_information.title }</p>
                     </div>
                     <hr className="my-6 border-t border-gray-300" />
                     <div className="flex flex-col">
                         <h2 className="text-white text-xl font-bold mb-4">Skills</h2>
                         <ul>
-                            {data.skills.map((skill, index) => (
+                            {myData?.skills.map((skill, index) => (
                                 <li key={index} className="mb-2"><span className="text-white font-bold">{ skill.name }</span> <span className="text-xs text-gray-100">({ skill.type })</span></li>
                             ))}
                         </ul>
@@ -28,7 +34,7 @@ export default function PERSONAL_INFORMATION() {
                     <div className="flex flex-col">
                         <h2 className="text-white text-xl font-bold mb-4">Education</h2>
                         <ul>
-                            {data.education_background.map((education, index) => (
+                            {myData?.education_background.map((education, index) => (
                                 <li key={index} className="mb-2"><span className="text-white font-bold">{ education.title }</span> <span className="text-xs text-gray-100">({ education.school })</span></li>
                             ))}
                         </ul>
@@ -36,7 +42,7 @@ export default function PERSONAL_INFORMATION() {
                     <hr className="my-6 border-t border-gray-300" />
                     <div className="flex flex-col">
                         <h2 className="text-white text-xl font-bold mb-4">Reference</h2>
-                        {data.reference.map((reference, index) => (
+                        {myData?.reference.map((reference, index) => (
                         <ul key={index}>
                             <li className="mb-2"><span className="text-white font-bold">{ reference.name }</span></li>
                             <li><span className="text-white text-sm">{ reference.title }</span></li>
@@ -53,14 +59,14 @@ export default function PERSONAL_INFORMATION() {
             <div className="col-span-4 md:col-span-9">
                 <div className="bg-white shadow xl:rounded-lg p-6">
                     <h2 className="text-xl font-bold mb-4">About Me</h2>
-                    <p className="text-gray-700">{ (data.personal_information.profile).replace("{YEAR}", `${year}`) }</p>
+                    <p className="text-gray-700">{ (myData?.personal_information) ? (myData?.personal_information.profile).replace("{YEAR}", `${getTotalExpYear(myData?.personal_information.start_year)}`) : '' }</p>
 
                     <h3 className="font-semibold text-center mt-3 -mb-2">
                         Find me on
                     </h3>
                     <div className="flex justify-center items-center gap-6 my-6">
                         <a className="text-gray-700 hover:text-orange-600" aria-label="Visit TrendyMinds LinkedIn"
-                            href={data.personal_information.linkedIn}
+                            href={myData?.personal_information.linkedIn}
                             target="_blank">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" className="h-6">
                                 <path fill="currentColor"
@@ -69,7 +75,7 @@ export default function PERSONAL_INFORMATION() {
                             </svg>
                         </a>
                         <a className="text-gray-700 hover:text-orange-600" aria-label="Visit TrendyMinds Github"
-                            href={data.personal_information.github}
+                            href={myData?.personal_information.github}
                             target="_blank">
                             <svg width="20" height="20" aria-hidden="true" viewBox="0 0 16 16" version="1.1" data-view-component="true" className="octicon octicon-mark-github v-align-middle color-fg-default">
                                 <path fill="currentColor"
@@ -77,7 +83,7 @@ export default function PERSONAL_INFORMATION() {
                             </svg>
                         </a>
                         <a className="text-gray-700 hover:text-orange-600" aria-label="Visit TrendyMinds Map"
-                            href={data.personal_information.location}
+                            href={myData?.personal_information.location}
                             target="_blank">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
                                 <path fillRule="evenodd" d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" clipRule="evenodd" />
@@ -87,8 +93,8 @@ export default function PERSONAL_INFORMATION() {
                     <hr className="my-6 border-t border-gray-300" />
 
                     <h2 className="text-xl font-bold mt-6 mb-4">Experience</h2>
-                    {data.experience.map((experience, index) => (
-                        <div key={index} className={`${(index + 1 != data.experience.length) ? "border-b mb-6 pb-2" : "mb-6 pb-2"}`}>
+                    {myData?.experience.map((experience, index) => (
+                        <div key={index} className={`${(index + 1 != myData?.experience.length) ? "border-b mb-6 pb-2" : "mb-6 pb-2"}`}>
                             <div className="flex justify-between flex-wrap gap-2 w-full">
                                 <span className="text-gray-700 font-bold">{ experience.title }</span>
                                 <p className="text-right w-full">

@@ -1,5 +1,5 @@
 import firebase from '@/app/firebase'
-import { getDatabase, ref, set, onValue, child, get } from "firebase/database"
+import { getDatabase, ref, set, child, get } from "firebase/database"
 
 const db = getDatabase(firebase)
 
