@@ -55,3 +55,9 @@ interface MYDATA {
     reference: REFERENCE[],
     cover: string[]
 }
+
+interface PopupProps {
+    show: boolean,
+    setShowPopup: Function,
+    downloadOrSaveDownload: Function,
+}
