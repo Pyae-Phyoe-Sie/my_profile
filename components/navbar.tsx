@@ -52,7 +52,6 @@ export default function Navbar() {
         <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
           <div className="relative flex h-16 items-center justify-between">
             <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-              
               <button type="button" className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false"
                 onClick={() => setMobileMenu(!mobileMenu)}>
                 <span className="absolute -inset-0.5"></span>
@@ -81,22 +80,22 @@ export default function Navbar() {
               </div>
             </div>
             <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-              <a className='text-white bg-green-600 rounded p-2 flex' onClick={count}>
+              <button 
+                onClick={count}
+                className="col-start-2 flex bg-green-500 hover:bg-green-600 hover:ring hover:ring-green-300 text-white rounded-md p-2"
+              >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
                   <path fillRule="evenodd" d="M19.5 21a3 3 0 0 0 3-3V9a3 3 0 0 0-3-3h-5.379a.75.75 0 0 1-.53-.22L11.47 3.66A2.25 2.25 0 0 0 9.879 3H4.5a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h15Zm-6.75-10.5a.75.75 0 0 0-1.5 0v4.19l-1.72-1.72a.75.75 0 0 0-1.06 1.06l3 3a.75.75 0 0 0 1.06 0l3-3a.75.75 0 1 0-1.06-1.06l-1.72 1.72V10.5Z" clipRule="evenodd" />
                 </svg>
                 <label className='ml-1 cursor-pointer'>Download Resume</label>
                 <div className='ml-1'>{downloadCounts}</div>
-              </a>
-            {/* <label className='text-white'>Pyae Phyoe Sie</label> */}
-
-            {/* <!-- Profile dropdown --> */}
-            <div className="relative ml-3">
-              <div>
-                <img className="h-8 w-8 rounded-full" src="/profile.jpg" alt="" />
+              </button>
+              <div className="relative ml-3">
+                <div>
+                  <img className="h-8 w-8 rounded-full" src="/profile.jpg" alt="" />
+                </div>
               </div>
             </div>
-          </div>
           </div>
         </div>
       
