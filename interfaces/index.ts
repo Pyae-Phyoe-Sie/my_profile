@@ -54,6 +54,7 @@ interface MYDATA {
     skills: SKILL[],
     experience: EXPERIENCE[],
     reference: REFERENCE[],
+    languages: SKILL[]
 }
 
 interface PopupProps {

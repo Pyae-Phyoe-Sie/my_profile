@@ -5,7 +5,7 @@ import { FC, useEffect, useState } from 'react'
 import useSWR from 'swr'
 import { getCount, updateCount, saveEmail } from '@/services/CountService'
 import Popup from './popup'
-import { getZipFileLink, getProfileLink } from '@/services/DataService'
+import { getZipFileLink, getProfileLink, getProject } from '@/services/DataService'
 
 const fetcher = (url: string) => getCount().then((res) => res)
 
@@ -17,9 +17,12 @@ export default function Navbar() {
 
     const [profileLink, setProfileLink] = useState<string>()
     const [zipLink, setZipLink] = useState<string>()
+    const [myProjects, setMyProjects] = useState<PROJECT[]>([])
+    
     useEffect(() => {
       getZipFileLink().then((res) => setZipLink(res))
       getProfileLink().then((res) => setProfileLink(res))
+      getProject().then((res) => setMyProjects(res))
     }, [])
 
     const { data } = useSWR<number>("/", fetcher);
@@ -50,9 +53,9 @@ export default function Navbar() {
     }
     
     return <>
-      <nav className="bg-gray-800">
+      <nav className="bg-gray-800 min-h-[64px]">
         <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-          <div className="relative flex h-16 items-center justify-between">
+          {(profileLink) && <div className="relative flex h-16 items-center justify-between">
             <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
               <button type="button" className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false"
                 onClick={() => setMobileMenu(!mobileMenu)}>
@@ -75,9 +78,9 @@ export default function Navbar() {
                   <Link href="/resume" className={pathname === '/resume' ? 'bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium' : 'text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium'}>
                     Resume
                   </Link>
-                  <Link href="/projects" className={pathname === '/projects' ? 'bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium' : 'text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium'}>
+                  {(myProjects.length > 0) && <Link href="/projects" className={pathname === '/projects' ? 'bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium' : 'text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium'}>
                     Projects
-                  </Link>
+                  </Link>}
                 </div>
               </div>
             </div>
@@ -98,7 +101,7 @@ export default function Navbar() {
                 </div>
               </div>
             </div>
-          </div>
+          </div>}
         </div>
       
         {/* Mobile menu, show/hide based on menu state. */}
@@ -108,9 +111,9 @@ export default function Navbar() {
             <Link href="/resume" className={pathname === '/resume' ? 'bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium' : 'text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium'}>
               Resume
             </Link>
-            <Link href="/projects" className={pathname === '/projects' ? 'bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium' : 'text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium'}>
+            {(myProjects.length > 0) && <Link href="/projects" className={pathname === '/projects' ? 'bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium' : 'text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium'}>
               Projects
-            </Link>
+            </Link>}
           </div>
         </div>}
       </nav>

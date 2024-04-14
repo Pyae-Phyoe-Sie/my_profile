@@ -46,6 +46,16 @@ export default function PERSONAL_INFORMATION() {
                         </ul>
                     </div>}
 
+                    {(myData?.languages.length > 0) && <hr className="my-6 border-t border-gray-300" />}
+                    {(myData?.languages.length > 0) && <div className="flex flex-col">
+                        <h2 className="text-white text-xl font-bold mb-4">Languages</h2>
+                        <ul>
+                            {myData?.languages.map((language, index) => (
+                                <li key={index} className="mb-2"><span className="text-white font-bold">{ language.name }</span> <span className="text-xs text-gray-100">({ language.type })</span></li>
+                            ))}
+                        </ul>
+                    </div>}
+
                     {(myData?.reference.length > 0) && <hr className="my-6 border-t border-gray-300" />}
                     {(myData?.reference.length > 0) && <div className="flex flex-col">
                         <h2 className="text-white text-xl font-bold mb-4">Reference</h2>

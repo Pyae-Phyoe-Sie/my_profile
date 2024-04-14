@@ -19,6 +19,7 @@ const dbRef = ref(getDatabase())
         const skills = await get(child(dbRef, `/skills`))
         const experience = await get(child(dbRef, `/experience`))
         const reference = await get(child(dbRef, `/reference`))
+        const languages = await get(child(dbRef, `/languages`))
 
         return {
             personal_information: personal,
@@ -26,6 +27,7 @@ const dbRef = ref(getDatabase())
             skills: JSON.parse(skills.val()),
             experience: JSON.parse(experience.val()),
             reference: JSON.parse(reference.val()),
+            languages: JSON.parse(languages.val()),
         } as MYDATA
     }
 
