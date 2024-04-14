@@ -22,7 +22,7 @@ export default function PERSONAL_INFORMATION() {
             <div className="col-span-4 md:col-span-3">
                 <div className="bg-gray-700 shadow xl:rounded-lg p-6">
                     <div className="flex flex-col items-center">
-                        <img src={profileLink} className="w-32 h-32 bg-white rounded-full mb-4 shrink-0" />
+                        <img src={profileLink} className="w-32 h-32 bg-white rounded-full mb-4 shrink-0 object-cover" />
                         {(myData?.personal_information.nickname == "") ?
                         <h1 className="text-white text-xl font-bold">{ myData?.personal_information.name }</h1>
                         :

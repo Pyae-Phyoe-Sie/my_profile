@@ -91,7 +91,7 @@ export default function Navbar() {
               </button>
               <div className="relative ml-3">
                 <div>
-                  <img className="h-8 w-8 rounded-full" src={profileLink} alt="" />
+                  <img className="h-8 w-8 rounded-full object-cover" src={profileLink} alt="" />
                 </div>
               </div>
             </div>
