@@ -1,3 +1,6 @@
+
+console.log(process.env)
+
 export const ENV = {
     NEXT_PUBLIC_API_KEY: process.env.API_KEY,
     NEXT_PUBLIC_AUTH_DOMAIN: process.env.AUTH_DOMAIN,
