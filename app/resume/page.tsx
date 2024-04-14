@@ -29,24 +29,26 @@ export default function PERSONAL_INFORMATION() {
                         <h1 className="text-white text-xl font-bold">{ myData?.personal_information.name } ({ myData?.personal_information.nickname })</h1>}
                         <p className="text-white">{ myData?.personal_information.title }</p>
                     </div>
-                    <hr className="my-6 border-t border-gray-300" />
-                    <div className="flex flex-col">
+                    {(myData?.skills.length > 0) && <hr className="my-6 border-t border-gray-300" />}
+                    {(myData?.skills.length > 0) && <div className="flex flex-col">
                         <h2 className="text-white text-xl font-bold mb-4">Skills</h2>
                         <ul>
                             {myData?.skills.map((skill, index) => (
                                 <li key={index} className="mb-2"><span className="text-white font-bold">{ skill.name }</span> <span className="text-xs text-gray-100">({ skill.type })</span></li>
                             ))}
                         </ul>
-                    </div>
-                    <hr className="my-6 border-t border-gray-300" />
-                    <div className="flex flex-col">
+                    </div>}
+
+                    {(myData?.education_background.length > 0) && <hr className="my-6 border-t border-gray-300" />}
+                    {(myData?.education_background.length > 0) && <div className="flex flex-col">
                         <h2 className="text-white text-xl font-bold mb-4">Education</h2>
                         <ul>
                             {myData?.education_background.map((education, index) => (
                                 <li key={index} className="mb-2"><span className="text-white font-bold">{ education.title }</span> <span className="text-xs text-gray-100">({ education.school })</span></li>
                             ))}
                         </ul>
-                    </div>
+                    </div>}
+
                     {(myData?.reference.length > 0) && <hr className="my-6 border-t border-gray-300" />}
                     {(myData?.reference.length > 0) && <div className="flex flex-col">
                         <h2 className="text-white text-xl font-bold mb-4">Reference</h2>
@@ -69,9 +71,9 @@ export default function PERSONAL_INFORMATION() {
                     <h2 className="text-xl font-bold mb-4">About Me</h2>
                     <p className="text-gray-700">{ (myData?.personal_information) ? (myData?.personal_information.profile).replace("{YEAR}", `${getTotalExpYear(myData?.personal_information.start_year)}`) : '' }</p>
 
-                    <h3 className="font-semibold text-center mt-3 -mb-2">
+                    {(myData?.personal_information.linkedIn != "" || myData?.personal_information.github != "" || myData?.personal_information.location != "" || myData?.personal_information.email != "") && <h3 className="font-semibold text-center mt-3 -mb-2">
                         Find me on
-                    </h3>
+                    </h3>}
                     <div className="flex justify-center items-center gap-6 my-6">
                         {(myData?.personal_information.linkedIn != "") && <a className="text-gray-700 hover:text-orange-600" aria-label="Visit TrendyMinds LinkedIn"
                             href={myData?.personal_information.linkedIn}
@@ -97,10 +99,18 @@ export default function PERSONAL_INFORMATION() {
                                 <path fillRule="evenodd" d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" clipRule="evenodd" />
                             </svg>
                         </a>}
+                        {(myData?.personal_information.email != "") && <a className="text-gray-700 hover:text-orange-600" aria-label="Visit TrendyMinds Map"
+                            href={`mailto:${myData?.personal_information.email}`}
+                            target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
+                                <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
+                                <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
+                            </svg>
+                        </a>}
                     </div>
-                    <hr className="my-6 border-t border-gray-300" />
 
-                    <h2 className="text-xl font-bold mt-6 mb-4">Experience</h2>
+                    {(myData?.experience.length > 0) && <hr className="my-6 border-t border-gray-300" />}
+                    {(myData?.experience.length > 0) && <h2 className="text-xl font-bold mt-6 mb-4">Experience</h2>}
                     {myData?.experience.map((experience, index) => (
                         <div key={index} className={`${(index + 1 != myData?.experience.length) ? "border-b mb-6 pb-2" : "mb-6 pb-2"}`}>
                             <div className="flex justify-between flex-wrap gap-2 w-full">
