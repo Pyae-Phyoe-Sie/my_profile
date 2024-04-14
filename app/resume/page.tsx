@@ -15,7 +15,7 @@ export default function PERSONAL_INFORMATION() {
     }, [])
 
     return (!myData?.personal_information) ?
-    <Processing />
+    <Processing /> 
     :
     <main className="flex flex-col items-center justify-between xl:p-10">
         <div className="grid grid-cols-4 md:grid-cols-12 xl:gap-6">
