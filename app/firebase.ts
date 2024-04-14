@@ -1,6 +1,8 @@
 import { initializeApp } from "firebase/app"
 import { ENV } from "./constants"
 
+console.log(ENV)
+
 export const firebaseConfig = {
     apiKey:             ENV.NEXT_PUBLIC_API_KEY, // "AIzaSyAT0PbbtKsL8x1PYFjlLZUmqVMaj6yjL30",
     authDomain:         ENV.NEXT_PUBLIC_AUTH_DOMAIN, //"my-profile-e4db1.firebaseapp.com",
