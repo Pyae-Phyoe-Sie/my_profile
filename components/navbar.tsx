@@ -15,15 +15,15 @@ export default function Navbar() {
     const [downloadCounts, setDownloadCounts] = useState<number>(0)
     const [showPopup, setShowPopup] = useState<boolean>(false)
 
-    const [profileLink, setProfileLink] = useState<string>()
-    const [zipLink, setZipLink] = useState<string>()
-    const [myProjects, setMyProjects] = useState<PROJECT[]>([])
+    const [profileLink, setProfileLink] = useState<string>(getProfileLink())
+    const [zipLink, setZipLink] = useState<string>(getZipFileLink())
+    const [myProjects, setMyProjects] = useState<PROJECT[]>(getProject())
     
-    useEffect(() => {
-      getZipFileLink().then((res) => setZipLink(res))
-      getProfileLink().then((res) => setProfileLink(res))
-      getProject().then((res) => setMyProjects(res))
-    }, [])
+    // useEffect(() => {
+    //   getZipFileLink().then((res) => setZipLink(res))
+    //   getProfileLink().then((res) => setProfileLink(res))
+    //   getProject().then((res) => setMyProjects(res))
+    // }, [])
 
     const { data } = useSWR<number>("/", fetcher);
 
@@ -53,8 +53,8 @@ export default function Navbar() {
     }
     
     return <>
-      <nav className="bg-gray-800 min-h-[64px]">
-        <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+      <nav className="bg-gray-800 min-h-[64px] w-full">
+        <div className="mx-auto w-full px-2 sm:px-6 lg:px-8">
           {(profileLink) && <div className="relative flex h-16 items-center justify-between">
             <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
               <button type="button" className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false"
@@ -85,7 +85,7 @@ export default function Navbar() {
               </div>
             </div>
             <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-              <button 
+              {/* <button 
                 onClick={count}
                 className="col-start-2 flex bg-green-500 hover:bg-green-600 hover:ring hover:ring-green-300 text-white rounded-md p-2"
               >
@@ -94,7 +94,7 @@ export default function Navbar() {
                 </svg>
                 <label className='ml-1 cursor-pointer'>Download Resume</label>
                 <div className='ml-1'>{downloadCounts}</div>
-              </button>
+              </button> */}
               <div className="relative ml-3">
                 <div>
                   <img className="h-8 w-8 rounded-full" src={profileLink} alt="" />

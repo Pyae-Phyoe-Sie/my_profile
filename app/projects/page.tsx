@@ -6,7 +6,8 @@ import { useEffect, useState } from "react";
 export default function PROJECTS() {
     const [myData, setMyData] = useState<PROJECT[]>([])
     useEffect(() => {
-        getProject().then((res) => setMyData(res))
+        // getProject().then((res) => setMyData(res))
+        setMyData(getProject())
     }, [])
 
     return (myData.length === 0) ?
