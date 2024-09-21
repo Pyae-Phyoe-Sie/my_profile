@@ -16,6 +16,7 @@ interface PERSONAL {
     linkedIn: string,
     github: string,
     location: string,
+    hackerRank: string
 }
 
 interface SKILL {

@@ -13,7 +13,8 @@ export const personalData = {
         start_year: 2017,
         linkedIn: "https://www.linkedin.com/in/pyae-phyoe-sie-302342197/",
         github: "https://github.com/Pyae-Phyoe-Sie",
-        location: "https://maps.app.goo.gl/9VycHeSuZ4KQN8EB7"
+        location: "https://maps.app.goo.gl/9VycHeSuZ4KQN8EB7",
+        hackerRank: "https://www.hackerrank.com/profile/kimshinpyae"
     },
     education_background: [
         {
