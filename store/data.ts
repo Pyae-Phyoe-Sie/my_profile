@@ -181,7 +181,13 @@ export const personalData = {
         },
         {
             "title": "DHL Test case",
-            "description": "This is a DHL project where I wrote test cases for their website using Selenium. Additionally, I managed and assigned tasks to junior developers. For 'DHL Google Ads,' I developed it as a library using PHP and deployed it with Google Ads.",
+            "description": "This is a DHL project where I wrote test cases for their website using Selenium. Additionally, I managed and assigned tasks to junior developers.",
+            "image": "",
+            "link": ""
+        },
+        {
+            "title": "DHL Google Ads",
+            "description": "I developed it as a library using PHP and deployed it with Google Ads.",
             "image": "",
             "link": ""
         },
