@@ -6,10 +6,7 @@ export const personalData = {
         name: "Pyae Phyoe Sie",
         nickname: "June",
         title: "Full Stack Developer",
-        profile: `Graduated in December 2016. Holding Diploma of Software Engineering. Over {YEAR} years’ 
-            experience in web application development. Over 2 years’ experience in Singapore web 
-            projects and SharePoint list projects. Critical thinking and data structuring is stronger. 
-            Currently, working as a Senior Full Stack Web Developer.`,
+        profile: `Graduated in December 2016 with a Diploma in Software Engineering. Over {YEAR} years of experience in web application development, including more than two years working on Singapore web projects and SharePoint list projects. Strong critical thinking and data structuring skills. Currently working as a Senior Full Stack Web Developer.`,
         start_year: 2017,
         linkedIn: "https://www.linkedin.com/in/pyae-phyoe-sie-302342197/",
         github: "https://github.com/Pyae-Phyoe-Sie",
@@ -107,56 +104,135 @@ export const personalData = {
             to: "",
             present: true,
             responsibilities: [
-                "Develop the features of the project.",
-                "Develop the testcase using Cypress and Japa."
+                "Develop the project's features.",
+                "Write test cases using Cypress and Japa."
             ]
         },
         {
             title: "Senior Full Stack Developer",
-            type: "(Full Time)",
+            type: "(On Site)",
             company: "Clickr Media Myanmar Co.ltd",
             from: "Aug 2020",
             to: "Aug 2023",
             present: false,
             responsibilities: [
-                "Structure the project database design.",
-                "Develop the project.",
-                "Fix bugs and user issues.",
-                "Learn the new technology and share back to team.",
-                "Find the technique for issue.",
-                "Review the junior code and lead the team."
+                "Design the project's database structure.",
+                "Develop the project features.",
+                "Fix bugs and resolve user issues.",
+                "Learn new technologies and share knowledge with the team.",
+                "Research techniques to solve issues.",
+                "Review junior developers' code and lead the team."
             ]
         },
         {
             title: "Senior PHP Developer",
-            type: "(Full Time)",
+            type: "(On Site)",
             company: "Myanmar High Society Co.ltd",
             from: "Mar 2019",
             to: "Dec 2019",
             present: false,
             responsibilities: [
-                "Develop the project.",
-                "Fix bugs.",
-                "Integrate with API.",
-                "Reduce data fetching time for the performance."
+                "Develop the project features.",
+                "Fix bugs adn issues.",
+                "Integrate with APIs.",
+                "Optimize data fetching to improve performance."
             ]
         },
         {
             title: "Operation Department Engineer",
-            type: "(Full Time)",
+            type: "(On Site)",
             company: "Blue Internet Myanmar Co.ltd",
             from: "Jan 2017",
             to: "Jan 2019",
             present: false,
             responsibilities: [
-                "Learn the programming languages.",
-                "Prepare the project documentation.",
+                "Learn programming languages.",
+                "Prepare project documentation.",
                 "Develop the project.",
-                "Participate as a good member in project."
+                "Collaborate effectively as a team member."
             ]
         }
     ],
-    projects: [{"title": "Web to Print","description": "This project was coming from Germany. We are developing for their pharmacy system. Used AdonisJS, VueJS and MySQL. For the testcase we used Cypress and Japa. The purpose of this app is generating PDF for pharmacy info and products flyer.","image": "","link": ""},{"title": "AAA Secretary System","description": "This one is maintenance project and used Codeigniter.  Reduce loading speed and fixed some user issues.","image": "","link": ""},{"title": "Zero Food Waste Season 1 ~ 5","description": "They are the DBS Bank game projects, named Zero Food Waste - Used Nuxt.js. I developed both the frontend and backend. Using php on staging and live site with SharePoint. Testcase uses mocha.","image": "","link": ""},{"title": "My Voice, DBS Tell Piyush, DBS Central Library, DBS POP central","description": "They are the DBS Bank project, for their internal. Using jQuery and PHP for local development and SharePoint for live.","image": "","link": ""},{"title": "DHL Test case","description": "This is a DHL project. I just wrote a test case for their website. Used Selenium. And manage and assign tasks for junior developers. DHL Google ADS - I developed it as a library. I wrote with PHP and deployed with google ads.","image": "","link": ""},{"title": "TOTT Ecommerce","description": "Modify current system, they are using WordPress for this. So, use hook and implement with API. Flow earns points to users upon how much they bought, and they can use those points for the next order.","image": "","link": "https://tottstore.com/"},{"title": "EMF","description": "EMF is Oil company from Singapore. We hand overed the project for the maintenance and enhancement. Used Flutter for web and desktop app. Backend is node JS and that was handled by other developer.","image": "","link": ""},{"title": "Bit crew Web Application","description": " This is a web application. Came from Japan. Use Laravel and jQuery. I wrote the whole project. Use Amazon SES to send mail and Twilio to send SMS.","image": "","link": ""},{"title": "DPEX","description": "This is a web application. Use Yii2 and jQuery. I especially write SQL because the runtime is so long. So, I try to reduce execution time.","image": "","link": ""},{"title": "Crypto Price Compare","description": "This web application project is from Japan. I was doing API data fetching and then saving to the database. From layout design (Bootstrap). That project was using Play Java, React JS and MySQL.","image": "","link": ""},{"title": "Crypto currency Project","description": "This web application project also came from Japan. Fixing bugs and testing the app. Using NodeJS and Vue JS and MySQL.","image": "","link": ""},{"title": "Mail Automation System","description": "This web application project came from Japan. The customer wants to write an application for an online shopping website, to send feedback mail for buyer and seller. That project uses PHP Laravel, jQuery and JavaScript and MySQL. I was creating all user (one of tab menu) forms.","image": "","link": ""},{"title": "Office Management System","description": "This is our company's first product to use in office, attendance, leave, overtime, bus fare, join and resignation of employee and contract. Web application project. I was creating all attendance forms and the whole project form design using CSS. That project was used pure PHP, JavaScript, jQuery and MySQL.","image": "","link": ""}],
+    projects: [
+        {
+            "title": "Web to Print",
+            "description": "This project originates from Germany, and we are developing a pharmacy system for them. The tech stack includes AdonisJS, Vue.js, and MySQL. For testing, we use Cypress and Japa. The application's primary purpose is to generate PDFs for pharmacy information and product flyers.",
+            "image": "",
+            "link": ""
+        },
+        {
+            "title": "AAA Secretary System",
+            "description": "This is a maintenance project built with CodeIgniter. The main tasks involved optimizing loading speed and fixing user-reported issues.",
+            "image": "",
+            "link": ""
+        },
+        {
+            "title": "Zero Food Waste Season 1 ~ 5",
+            "description": "These are DBS Bank game projects, including 'Zero Food Waste,' developed using Nuxt.js. I worked on both the frontend and backend, using PHP for the staging and live sites with SharePoint integration. Mocha was used for testing.",
+            "image": "",
+            "link": ""
+        },
+        {
+            "title": "My Voice, DBS Tell Piyush, DBS Central Library, DBS POP central",
+            "description": "This is an internal project for DBS Bank. It was developed using jQuery and PHP for local development, with SharePoint used for the live environment.",
+            "image": "",
+            "link": ""
+        },
+        {
+            "title": "DHL Test case",
+            "description": "This is a DHL project where I wrote test cases for their website using Selenium. Additionally, I managed and assigned tasks to junior developers. For 'DHL Google Ads,' I developed it as a library using PHP and deployed it with Google Ads.",
+            "image": "",
+            "link": ""
+        },
+        {
+            "title": "TOTT Ecommerce",
+            "description": "The current system is built on WordPress. My task was to modify it by using hooks and integrating it with the API. The system allows users to earn points based on their purchases, which can then be redeemed for discounts on future orders.",
+            "image": "",
+            "link": "https://tottstore.com/" 
+        },
+        {
+            "title": "EMF",
+            "description": "EMF is an oil company based in Singapore. We handed over the project for maintenance and enhancement. The project was developed using Flutter for both web and desktop applications, with the backend built in Node.js, which was handled by another developer.",
+            "image": "",
+            "link": ""
+        },
+        {
+            "title": "Bit crew Web Application",
+            "description": "This is a web application from Japan, developed using Laravel and jQuery. I wrote the entire project, which utilizes Amazon SES for email sending and Twilio for SMS notifications.",
+            "image": "",
+            "link": ""
+        },
+        {
+            "title": "DPEX",
+            "description": "This is a web application developed using Yii2 and jQuery. I specifically focused on optimizing SQL queries to reduce long runtime and improve execution time.",
+            "image": "",
+            "link": ""
+        },
+        {
+            "title": "Crypto Price Compare",
+            "description": "This web application project is from Japan. My responsibilities included API data fetching and saving the data to the database. I also worked on layout design using Bootstrap. The project used Play Java, React.js, and MySQL.",
+            "image": "",
+            "link": ""
+        },
+        {
+            "title": "Crypto currency Project",
+            "description": "This web application project also came from Japan. My role involved fixing bugs and testing the app. The project used Node.js, Vue.js, and MySQL.",
+            "image": "",
+            "link": ""
+        },
+        {
+            "title": "Mail Automation System",
+            "description": "This web application project came from Japan. The client wanted an application for an online shopping website to send feedback emails to buyers and sellers. The project used PHP Laravel, jQuery, JavaScript, and MySQL. I was responsible for creating all the user forms (one of the tab menus).",
+            "image": "",
+            "link": ""
+        },
+        {
+            "title": "Office Management System",
+            "description": "This is our company's first product, a web application for managing office attendance, leave, overtime, bus fare, employee join and resignation, and contracts. I was responsible for creating all the attendance forms and designing the entire project layout using CSS. The project was developed using pure PHP, JavaScript, jQuery, and MySQL.",
+            "image": "",
+            "link": ""
+        }
+    ],
     reference: [
         {
             name: "Mr. Soe Oak Kyaw",
