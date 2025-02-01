@@ -105,7 +105,8 @@ export const personalData = {
             present: true,
             responsibilities: [
                 "Develop the project's features.",
-                "Write test cases using Cypress and Japa."
+                "Write test cases using Cypress and Japa.",
+                "Identify bugs and report issues to the design team."
             ]
         },
         {
@@ -133,7 +134,7 @@ export const personalData = {
             present: false,
             responsibilities: [
                 "Develop the project features.",
-                "Fix bugs adn issues.",
+                "Fix bugs and issues.",
                 "Integrate with APIs.",
                 "Optimize data fetching to improve performance."
             ]
