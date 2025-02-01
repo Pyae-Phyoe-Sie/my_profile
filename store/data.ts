@@ -108,7 +108,7 @@ export const personalData = {
             present: true,
             responsibilities: [
                 "Develop the features of the project.",
-                "Develop the testcase using Japa."
+                "Develop the testcase using Cypress and Japa."
             ]
         },
         {
