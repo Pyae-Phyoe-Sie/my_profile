@@ -245,17 +245,17 @@ export const personalData = {
         }
     ],
     cover: [
-        `Dear Sir / Madam,<br/><br/>
-        My full name is Pyae Phyoe Sie. I graduated from Yangon East University. My degree is BA English. I attended software engineer class in 2016. At 2017 January my IT life was started.<br/><br/> 
-        I have over {YEAR} years’ experience in the web application developing field. My current position is Senior Full Stack Developer. I have a strong thinking of code flow. And every time I am happy to learn new technologies.<br/><br/>
-        Here are my current job descriptions.<br/>
-            ▪ Lead the project structure<br/>
+        `Dear Sir/Madam,<br/><br/>
+        My name is Pyae Phyoe Sie, and I graduated from Yangon East University with a BA in English. In 2016, I attended a software engineering class, and my IT journey began in January 2017.<br/><br/> 
+        I have over {YEAR} years of experience in web application development, and I currently hold the position of Senior Full Stack Developer. I possess strong skills in code flow and am always eager to learn new technologies.<br/><br/>
+        Here are my current job responsibilities.<br/>
+            ▪ Lead project structuring<br/>
             ▪ Test and share new technologies<br/>
             ▪ Enhance and maintenance the projects<br/>
-            ▪ Bug fixing<br/>
+            ▪ Fix bugs<br/>
             ▪ Prepare documentation<br/><br/>
-        In conclusion, I think I am a suitable one for your organization. I will be a useful developer in your team. I can help you with a lot of issues with my experience.<br/><br/>
-        Thank you for your time and consideration. I am looking forward to hearing a kindly response from you.<br/><br/>
+        In conclusion, I believe I am a strong candidate for your organization. I am confident that I can be a valuable addition to your team and assist with various challenges using my experience.<br/><br/>
+        Thank you for your time and consideration. I look forward to hearing from you soon.<br/><br/>
         Best Regards,<br/>
         Pyae Phyoe Sie<br/>
         +959777538828 (WhatsApp)<br/>
